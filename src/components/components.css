@@ -1,0 +1,20 @@
+.doctor-card {
+  width: 250px;
+  margin-bottom: 15px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.doctor-card:hover {
+  transform: scale(1.02);
+}
+.card-img-top {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;            /* Crops to fill the area nicely */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+/* components.css */
+

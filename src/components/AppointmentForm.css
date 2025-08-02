@@ -1,0 +1,21 @@
+/* File: src/components/AppointmentForm.css */
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #f9f9f9;
+}
+.appointment-form input,
+.appointment-form button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.appointment-form button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
