@@ -1,21 +1,22 @@
-// File: src/pages/DoctorProfile.jsx
-// =============================
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import doctors from '../data/doctors';
 import './pages.css';
 
 function DoctorProfile() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [doctor, setDoctor] = useState(null);
 
-  useEffect(() => {
-    fetch(`http://localhost:7000/api/doctors/${id}`)
-      .then(res => res.json())
-      .then(data => setDoctor(data));
-  }, [id]);
+  const doctor = doctors.find(d => d.id === parseInt(id));
 
-  if (!doctor) return <div>Loading...</div>;
+  if (!doctor) {
+    return (
+      <div className="container mt-4">
+        <h4 className="text-danger">Doctor not found</h4>
+        <button className="btn btn-secondary mt-3" onClick={() => navigate('/')}>Go Back</button>
+      </div>
+    );
+  }
 
   return (
     <div className="container mt-4">
@@ -23,8 +24,8 @@ function DoctorProfile() {
       <img src={doctor.image} alt={doctor.name} className="img-fluid mb-3 profile-img" />
       <p><strong>Specialization:</strong> {doctor.specialization}</p>
       <p>{doctor.bio}</p>
-      <p><strong>Availability:</strong> {doctor.availability.join(', ') || 'Not available this week'}</p>
-      <button className="btn btn-primary" onClick={() => navigate(`/book/${doctor.id}`)}>
+      <p><strong>Availability:</strong> {doctor.availability.join(', ')}</p>
+      <button className="btn btn-primary" onClick={() => navigate(`/book/${id}`)}>
         Book Appointment
       </button>
     </div>
@@ -32,3 +33,5 @@ function DoctorProfile() {
 }
 
 export default DoctorProfile;
+
+

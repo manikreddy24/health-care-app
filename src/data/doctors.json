@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Ayesha Khan",
+    "specialization": "Cardiologist",
+    "status": "Available Today",
+    "image": "https://i.postimg.cc/PJMpxZ6p/name-dr-ayesha-khan-specialization-cardiologist-bio.jpg",
+    "bio": "Expert in cardiovascular health with 10+ years experience.",
+    "availability": [
+      "2025-08-02",
+      "2025-08-04"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Dr. Rohan Mehta",
+    "specialization": "Dermatologist",
+    "status": "Fully Booked",
+    "image": "https://i.postimg.cc/PxtZsTzQ/name-dr-rohan-mehta-specialization-dermatologist-bio.jpg",
+    "bio": "Skincare specialist focused on advanced treatments.",
+    "availability": []
+  },
+   {
+    "id": 3,
+    "name": "Dr. Meera Joshi",
+    "specialization": "Pediatrician",
+    "status": "Available Tomorrow",
+    "image": "https://i.postimg.cc/wBX0qbNB/portrait-of-dr-a-compassionate-pediatrician.jpg",
+    "bio": "Child health expert with focus on developmental milestones.",
+    "availability": ["2025-08-03", "2025-08-05"]
+  },
+  {
+    "id": 4,
+    "name": "Dr. Arjun Deshmukh",
+    "specialization": "Orthopedic",
+    "status": "Available Today",
+    "image": "https://i.postimg.cc/c1gX9m16/a-confident-male-orthopedic-doctor-in-his.jpg",
+    "bio": "Bone and joint specialist treating trauma and arthritis.",
+    "availability": ["2025-08-02", "2025-08-06"]
+  },
+  {
+    "id": 5,
+    "name": "Dr. Priya Nair",
+    "specialization": "Gynecologist",
+    "status": "Fully Booked",
+    "image": "https://i.postimg.cc/52RLNN7B/a-poised-female-gynecologist-in-her-40s.jpg",
+    "bio": "Specialist in women’s health and prenatal care.",
+    "availability": []
+  },
+  {
+    "id": 6,
+    "name": "Dr. Karan Verma",
+    "specialization": "ENT Specialist",
+    "status": "Available Today",
+    "image": "https://i.postimg.cc/FRJ2nRqD/a-confident-male-ent-specialist-in-his.jpg",
+    "bio": "Expert in ear, nose, and throat disorders.",
+    "availability": ["2025-08-02", "2025-08-03"]
+  },
+  {
+    "id": 7,
+    "name": "Dr. Sneha Agarwal",
+    "specialization": "Psychiatrist",
+    "status": "Available Next Week",
+    "image": "https://i.postimg.cc/xdX7c80n/a-compassionate-female-psychiatrist-in-her-late.jpg",
+    "bio": "Mental health professional with holistic therapy approach.",
+    "availability": ["2025-08-06", "2025-08-08"]
+  },
+  {
+    "id": 8,
+    "name": "Dr. Tanmay Rao",
+    "specialization": "Dentist",
+    "status": "Available Tomorrow",
+    "image": "https://i.postimg.cc/SNQgnRr3/a-skilled-male-dentist-in-his-early.jpg",
+    "bio": "Cosmetic and restorative dental surgeon.",
+    "availability": ["2025-08-03", "2025-08-04"]
+  }
+]

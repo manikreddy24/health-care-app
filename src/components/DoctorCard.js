@@ -1,7 +1,6 @@
-// File: src/components/DoctorCard.jsx
-// =============================
+// File: src/components/DoctorCard.js
 import React from 'react';
-import { data, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './components.css';
 
 function DoctorCard({ doctor }) {
@@ -25,3 +24,4 @@ function getBadgeClass(status) {
 }
 
 export default DoctorCard;
+

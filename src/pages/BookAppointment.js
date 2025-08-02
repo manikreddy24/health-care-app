@@ -1,51 +1,54 @@
-// File: src/pages/BookAppointment.jsx
-import React, { useState, useEffect } from 'react';
+// src/pages/BookAppointment.js
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import './pages.css';
+import doctorsData from '../data/doctors';
 
 function BookAppointment() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [form, setForm] = useState({ name: '', email: '', date: '', time: '' });
-  const [submitted, setSubmitted] = useState(false);
+  const doctor = doctorsData.find(d => d.id.toString() === id);
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const [name, setName] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:7000/api/appointments', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...form, doctorId: id })
-    }).then(() => setSubmitted(true));
+
+    const newAppointment = {
+      name,
+      date,
+      time,
+      doctorName: doctor.name,
+    };
+
+    // Pass appointment back to Home via route state
+    navigate('/', { state: { newAppointment } });
   };
 
-  useEffect(() => {
-    if (submitted) {
-      const timer = setTimeout(() => navigate('/'), 2000); // redirect after 2s
-      return () => clearTimeout(timer);
-    }
-  }, [submitted, navigate]);
-
-  if (submitted) {
-    return (
-      <div className="container mt-4 alert alert-success text-center">
-        Appointment booked successfully! Redirecting to home...
-      </div>
-    );
-  }
+  if (!doctor) return <p>Doctor not found</p>;
 
   return (
     <div className="container mt-4">
-      <h2>Book Appointment with Doctor #{id}</h2>
-      <form className="row g-3" onSubmit={handleSubmit}>
-        <input className="form-control" name="name" placeholder="Name" required onChange={handleChange} />
-        <input className="form-control" type="email" name="email" placeholder="Email" required onChange={handleChange} />
-        <input className="form-control" type="date" name="date" required onChange={handleChange} />
-        <input className="form-control" type="time" name="time" required onChange={handleChange} />
-        <button className="btn btn-success mt-3" type="submit">Confirm Booking</button>
+      <h3>Book Appointment with {doctor.name}</h3>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-2">
+          <label>Your Name</label>
+          <input name='name' className="form-control" value={name} onChange={e => setName(e.target.value)} required />
+        </div>
+        <div className="mb-2">
+          <label>Email</label>
+          <input name='email' className="form-control"  onChange={e => setName(e.target.value)} required />
+        </div>
+        <div className="mb-1">
+          <label>Date</label>
+          <input type="date" className="form-control" value={date} onChange={e => setDate(e.target.value)} required />
+        </div>
+        <div className="mb-1">
+          <label>Time</label>
+          <input type="time" className="form-control" value={time} onChange={e => setTime(e.target.value)} required />
+        </div>
+        <button type="submit" className="btn btn-primary">Confirm Booking</button>
       </form>
     </div>
   );
